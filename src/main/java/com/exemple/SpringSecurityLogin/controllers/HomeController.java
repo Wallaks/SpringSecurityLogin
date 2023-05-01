@@ -1,4 +1,4 @@
-package com.exemple.SpringSecurityLogin.Controllers;
+package com.exemple.SpringSecurityLogin.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
