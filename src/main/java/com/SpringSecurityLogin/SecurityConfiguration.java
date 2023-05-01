@@ -15,17 +15,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public static BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	//O método configure(HttpSecurity http) é usado para configurar as regras de
+
+	// O método configure(HttpSecurity http) é usado para configurar as regras de
 	// segurança do aplicativo em relação às solicitações HTTP que chegam ao servidor.
 	// Ele faz parte da classe WebSecurityConfigurerAdapter do Spring Security e é
 	// usado para definir como o Spring Security protegerá o aplicativo.
-	//No código fornecido, o método configure(HttpSecurity http) especifica que
+	// No código fornecido, o método configure(HttpSecurity http) especifica que
 	// todas as solicitações de HTTP devem ser autenticadas antes de serem permitidas.
 	// Isso é feito por meio do método authorizeRequests() que define as regras de autorização.
-	//A expressão .anyRequest().authenticated() significa que qualquer solicitação que não
+	// A expressão .anyRequest().authenticated() significa que qualquer solicitação que não
 	// seja correspondida por outra regra deve ser autenticada antes de ser permitida.
 	// Ou seja, para acessar qualquer URL, o usuário deve ser autenticado.
-	//O método formLogin() é usado para especificar que o formulário de login
+	// O método formLogin() é usado para especificar que o formulário de login
 	// deve ser exibido quando um usuário não autenticado tenta acessar uma URL
 	// protegida. Ele define as opções de configuração para a página de login,
 	// como a URL da página de login e os campos do formulário de login.
@@ -34,11 +35,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll();
 	}
 
-	//O método configure(AuthenticationManagerBuilder auth) é usado para configurar
+	// O método configure(AuthenticationManagerBuilder auth) é usado para configurar
 	// o mecanismo de autenticação no Spring Security. Ele faz parte da classe
 	// WebSecurityConfigurerAdapter do Spring Security e é usado para definir como
 	// o Spring Security irá autenticar os usuários.
-	//No código fornecido, o método configure(AuthenticationManagerBuilder auth)
+	// No código fornecido, o método configure(AuthenticationManagerBuilder auth)
 	// usa um AuthenticationProvider em memória para autenticar usuários.
 	// Ele adiciona um único usuário com o nome de usuário "user", a senha
 	// "password" e a autoridade "USER" (ou seja, um usuário comum) usando
